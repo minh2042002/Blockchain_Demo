@@ -4,8 +4,6 @@
 
 Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn) {
     _nNonce = -1;
-    _tTime = time(0);
-
 }
 
 string Block::GetHash() {
@@ -13,7 +11,6 @@ string Block::GetHash() {
 }
 
 void Block::MineBlock(uint32_t nDifficulty) {
-    char* cDateT = ctime(&_tTime);
     char cstr[nDifficulty + 1];
     for(uint32_t i = 0; i < nDifficulty; i++) {
         cstr[i] = '0';
@@ -30,6 +27,8 @@ void Block::MineBlock(uint32_t nDifficulty) {
     
     cout << "Content: " << _sData << endl;
     cout << "Block mined: " << _sHash << endl;
+    _tTime = time(NULL);
+    char* cDateT = ctime(&_tTime);
     cout << "Time mined: " << cDateT << endl;
 }
 

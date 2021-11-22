@@ -12,6 +12,8 @@ public:
 
     void AddBlock(Block bNew);
 
+    void isChainValid();
+
 private:
     uint32_t _nDifficulty;
     vector<Block> _vChain;

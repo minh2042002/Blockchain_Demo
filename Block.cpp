@@ -10,6 +10,10 @@ string Block::GetHash() {
     return _sHash;
 }
 
+uint32_t Block::GetIndex() {
+    return _nIndex;
+}
+
 void Block::MineBlock(uint32_t nDifficulty) {
     char cstr[nDifficulty + 1];
     for(uint32_t i = 0; i < nDifficulty; i++) {
@@ -28,6 +32,7 @@ void Block::MineBlock(uint32_t nDifficulty) {
     _tTime = time(NULL);
     char* cDateT = ctime(&_tTime);
     cout << "Block {" << endl;
+    cout << "\tIndex: " << _nIndex << endl;
     cout << "\tPrevious block: " << sPrevHash << endl;
     cout << "\tContent: " << _sData << endl;
     cout << "\tBlock mined: " << _sHash << endl;

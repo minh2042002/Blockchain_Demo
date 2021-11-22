@@ -13,8 +13,9 @@ public:
 
     string GetHash();
 
+    uint32_t GetIndex();
     void MineBlock(uint32_t uDifficulty);
-    
+
 private:
     uint32_t _nIndex;
     int64_t _nNonce;

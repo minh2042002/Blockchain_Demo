@@ -13,5 +13,7 @@ int main() {
     cout << "Mining block 3...\n" << endl;
     bChain.AddBlock(Block(3, "Hung chuyen tien cho Hien"));
 
+    bChain.isChainValid();
+
     return 0;
 }

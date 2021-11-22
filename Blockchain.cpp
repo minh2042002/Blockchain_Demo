@@ -8,6 +8,7 @@ Blockchain::Blockchain() {
 void Blockchain::AddBlock(Block bNew) {
     bNew.sPrevHash = _GetLastBlock().GetHash();
     bNew.MineBlock(_nDifficulty);
+    
     _vChain.push_back(bNew);
 }
 

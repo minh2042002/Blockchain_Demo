@@ -25,11 +25,14 @@ void Block::MineBlock(uint32_t nDifficulty) {
         _sHash = _CalculateHash();
     } while (_sHash.substr(0, nDifficulty) != str);
     
-    cout << "Content: " << _sData << endl;
-    cout << "Block mined: " << _sHash << endl;
     _tTime = time(NULL);
     char* cDateT = ctime(&_tTime);
-    cout << "Time mined: " << cDateT << endl;
+    cout << "Block {" << endl;
+    cout << "\tPrevious block: " << sPrevHash << endl;
+    cout << "\tContent: " << _sData << endl;
+    cout << "\tBlock mined: " << _sHash << endl;
+    cout << "\tTime mined: " << cDateT;
+    cout << "}\n" << endl;
 }
 
 inline string Block::_CalculateHash() const {
